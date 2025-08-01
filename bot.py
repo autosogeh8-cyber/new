@@ -31,7 +31,11 @@ class Bot(Client):
             bot_token=TG_BOT_TOKEN,
         )
         self.LOGGER = LOGGER
-
+        
+    def run(self):
+        import asyncio
+        asyncio.run(self.start())
+        
     async def start(self):
         try:
             await super().start()
